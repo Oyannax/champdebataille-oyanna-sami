@@ -34,11 +34,12 @@ function getRandomPlayer() {
     let defender;
     let attacker;
     while (attacker === undefined || players[attacker].pv <= 0) {
-    attacker = Math.floor(Math.random() * players.length );
+    attacker = Math.floor(Math.random() * players.length);
     }
     while (attacker === defender || defender === undefined || players[defender].pv <= 0) {
         defender = Math.floor(Math.random() * players.length);
     }
+    console.table(players);
     return [players[attacker], players[defender]];
 }
 
@@ -58,3 +59,19 @@ function getBattle(){
     }
     return `${result} perdu le combat!`;
 }
+
+function displayWar() {
+    let death = 0;
+    while (death !== 3) {
+        console.log(getBattle());
+        for (let player in players) {
+            if (players[player].pv <= 0){
+                players.splice(player, 1);
+                death ++
+            }
+        }
+    }
+    return `Le grand gagnant est : ${players[0].name}`;
+}
+
+console.log(displayWar());
