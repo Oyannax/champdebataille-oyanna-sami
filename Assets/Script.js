@@ -29,7 +29,7 @@ let players = [
     }
 ]
 
-
+// Fonction pour avoir 2 joueurs aléatoire
 function getRandomPlayer() {
     let defender;
     let attacker;
@@ -43,6 +43,7 @@ function getRandomPlayer() {
     return [players[attacker], players[defender]];
 }
 
+// Fonction pour faire combattre les 2 joueurs choisis aléatoirement et obtenir le résumé du combat
 function getBattle(){
     let fighters = getRandomPlayer();
     let defender = fighters[1];
@@ -60,6 +61,7 @@ function getBattle(){
     return `${result} perdu le combat!`;
 }
 
+// Fonction pour afficher la bataille et afficher le resultat du  gagnant
 function displayWar() {
     let death = 0;
     while (death !== 3) {
