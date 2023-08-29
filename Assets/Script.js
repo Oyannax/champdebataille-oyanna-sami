@@ -50,7 +50,7 @@ function getBattle(){
     let attacker = fighters[0];
     let attackerScore = attacker.xp + Math.floor(Math.random() * (attacker.weapon + 1));
     let defenderScore = defender.xp + Math.floor(Math.random() * (defender.shield + 1));
-    let result = `Le joueur ${attacker.name} a attaqué avec un score de ${attackerScore}. ${defender.name} s'est défendu avec un score de ${defenderScore}. ${attacker.name} a `;
+    let result = `Le joueur ${attacker.name} a attaqué avec un score de ${attackerScore}. ${defender.name} s'est défendu avec un score de ${defenderScore}. ${attacker.name} a`;
     if (attackerScore > defenderScore && defender.pv > 0){ 
         defender.pv -= attackerScore;
         if (defender.pv <= 0){
